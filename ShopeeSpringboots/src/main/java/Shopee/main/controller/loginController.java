@@ -115,7 +115,7 @@ public class loginController {
 		user checkPhoneNumber=userService.CheckPhoneNumber(phoneNumber);
 		user checkUsername=userService.checkUsername(username);
 		
-		
+		//check
 		if(checkemail!=null && checkemail.getIsAccountGoogle()==0)
 		{
 			model.addAttribute("mess", "mail này đã tồn tại");

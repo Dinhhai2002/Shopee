@@ -20,7 +20,6 @@ public class ApiStatictisController {
 	public ResponseEntity<List<Object[]>> listCategory()
 	{
 		List<Object[]> list=statsService.countProductBycategory();
-		
 		return new ResponseEntity<List<Object[]>>(list, HttpStatus.OK);
 	}
 }

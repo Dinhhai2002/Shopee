@@ -1,4 +1,4 @@
-package Shopee.main.controller;
+package Shopee.main.controller.api;
 
 import javax.validation.Valid;
 
@@ -52,10 +52,10 @@ public class APIManager {
 	iUserService userService;
 	
 	@DateTimeFormat
-	//hiển thị hình ảnh
+	
 	
 	 @RequestMapping(value = "/api/managerProduct/{id}", method = RequestMethod.GET)
-	public Product findContact(@PathVariable("id") int id) {
+	public Product findProduct(@PathVariable("id") int id) {
 	
 		Product product= productService.getOne(id);
 		if(product == null) {
@@ -74,7 +74,7 @@ public class APIManager {
 		}
 	
 	 @PostMapping(value = "/api/managerProduct")
-		public Product saveContact(@Valid @RequestBody Product product) {
+		public Product saveProduct(@Valid @RequestBody Product product) {
 		 	if(product.getCategory()!=null)
 		 	{
 		 		Category category=categoryService.getById(product.getCategory().getCId());
@@ -156,8 +156,7 @@ public class APIManager {
 		}
 		
 		orderDetailService.save(oderdetail);
-		 //set status
-		//save orderDetail
+		 
 		
 		    return ResponseEntity.ok(oderdetail);
 	 }

@@ -74,7 +74,7 @@ public class apiAdminController {
 		    return ResponseEntity.ok(formCategory);
 	 }
 	 @PostMapping(value = "/api/admin/category")
-		public Category saveContact(@Valid @RequestBody Category category) {
+		public Category postCategory(@Valid @RequestBody Category category) {
 		 	if(category==null)
 		 	{
 		 		ResponseEntity.notFound().build();

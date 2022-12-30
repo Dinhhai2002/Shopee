@@ -98,7 +98,6 @@ public class AdminController {
 		}
 
 		int totalPages = resultPage.getTotalPages();
-		System.out.println("Vao day nha");
 		if (totalPages > 0) {
 			int start = Math.max(1, currentpage - 2);
 			int end = Math.min(currentpage + 2, totalPages);

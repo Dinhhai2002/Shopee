@@ -119,7 +119,7 @@ public class ManagerController {
 		
 	}
 	
-//	Thống kê
+//	statistic
 	@GetMapping("/managerProduct/stats")
 	public String stats(Model model,@ModelAttribute(name="productName") String productName,@ModelAttribute("fromDate") String fromDate,
 			@ModelAttribute("toDate") String toDate,@ModelAttribute("fromDateMonth") String fromDateMonth,

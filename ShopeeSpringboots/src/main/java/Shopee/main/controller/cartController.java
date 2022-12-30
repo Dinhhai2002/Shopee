@@ -30,8 +30,6 @@ public class cartController {
 		else {
 			model.addAttribute("carts", cart.values());
 			//model.addAttribute("cartCounter", CartUtils.countCart((Map<Integer, CartModel>) session.getAttribute("cart")));
-			
-			
 		}
 		model.addAttribute("cartStats", CartUtils.cartStats(cart));
 		return "cart";

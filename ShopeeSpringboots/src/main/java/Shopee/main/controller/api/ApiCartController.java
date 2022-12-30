@@ -1,4 +1,4 @@
-package Shopee.main.controller;
+package Shopee.main.controller.api;
 
 import java.util.HashMap;
 import java.util.Map;
