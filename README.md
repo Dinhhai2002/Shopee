@@ -5,8 +5,8 @@
  * BackEnd:Java(Spring boots)
  * Database:Sql server
 ## Chức năng:
-  * Đăng nhập(Spring Security):Đăng kí (gửi mail OTP),đăng nhập google,Quên mật
-  khẩu(gửi mail OTP)
+  * Đăng nhập(Spring Security):Đăng kí (gửi mail),đăng nhập google,Quên mật
+  khẩu(gửi mail)
   * Thêm vào giỏ hàng,mua hàng,thanh toán,duyệt đơn hàng(restful Api)
   * phân trang sản phẩm theo danh mục
   * Đánh giá sản phẩm,tìm kiếm sản phẩm
