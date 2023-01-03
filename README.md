@@ -5,9 +5,9 @@
 +BackEnd:Java(Spring boots)
 +Database:Sql server
 -Chức năng:
-  +Đăng nhập:Đăng kí (gửi mail OTP),đăng nhập google,Quên mật
+  *+Đăng nhập:Đăng kí (gửi mail OTP),đăng nhập google,Quên mật
   khẩu(gửi mail OTP)
-  +Thêm vào giỏ hàng,mua hàng,thanh toán,duyệt đơn hàng
+  *+Thêm vào giỏ hàng,mua hàng,thanh toán,duyệt đơn hàng
   +phân trang sản phẩm theo danh mục
   +Đánh giá sản phẩm,tìm kiếm sản phẩm
   +Người bán(CRUD,duyệt đơn hàng của shop)
