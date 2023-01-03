@@ -7,11 +7,12 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import Shopee.main.entity.Product;
 import Shopee.main.entity.user;
 
-public interface iUserService {
+public interface iUserService extends UserDetailsService {
 
 	void deleteAll();
 
@@ -46,5 +47,6 @@ public interface iUserService {
 	user getById(Integer id);
 	public List<user> getTop10();
 	Page<user> findByuNameContaining(String name,Pageable pageable);
+	List<user> findByuName(String username);
 
 }

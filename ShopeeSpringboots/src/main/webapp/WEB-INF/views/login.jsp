@@ -31,6 +31,12 @@
 							Ký </a>
 					</div>
 					<div class="authForm__form">
+					<c:if test="${param.error!=null }">
+					<h3 style="color:red;">Đã xảy ra lỗi vui lòng quay lại sau</h3>
+					</c:if>
+					<c:if test="${param.accessDenied!=null}">
+					<h3 style="color:red;">Bạn không có quyền truy cập </h3>
+					</c:if>
 						<h3 style="color:red;">${mess}</h3>
 						<div class="authForm__group">
 							<input id="username" value="${username}"name="username" type="text" class="authForm__input"

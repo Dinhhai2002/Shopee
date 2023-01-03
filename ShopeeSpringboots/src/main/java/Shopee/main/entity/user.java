@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
@@ -45,10 +46,12 @@ public class user implements Serializable {
 	private String uFullAddress;
 	@Column(name="upassword")
 	private String uPassword;
+	@Transient
+	private String confirmPassword;
 	@Column(name="uphone")
 	private String uPhone;
-	@Column(name="idrole")
-	private int idRole;
+	@Column(name="userrole")
+	private String userRole;
 	@Column(name="isaccountgoogle")
 	private int isAccountGoogle;
 	@Column(name="isactive")

@@ -168,13 +168,13 @@ public class APIManager {
 			 		ResponseEntity.notFound().build();
 			 	}
 			 	user acc=userService.getById(shop.getUser().getUId());
-			 	if(acc.getIdRole()==3)
+			 	if(acc.getUserRole()=="Role_seller")
 			 	{
 			 		ResponseEntity.notFound().build();
 			 	}
 			 	else {
 			 		shop.setUser(acc);
-			 		acc.setIdRole(3);
+			 		acc.setUserRole("Role_seller");
 			 		userService.save(acc);
 				 	
 					

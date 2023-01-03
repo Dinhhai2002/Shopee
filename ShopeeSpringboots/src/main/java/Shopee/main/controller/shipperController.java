@@ -21,7 +21,7 @@ public class shipperController {
 	@Autowired
 	iOrderDetailService orderDetailService;
 	
-	@GetMapping("/orderShipper")
+	@GetMapping("/shipper/orderShipper")
 	public String orderManager(Model model)
 	{
 		

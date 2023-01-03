@@ -1,13 +1,19 @@
 package Shopee.main.Service.impl;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import Shopee.main.Service.iUserService;
@@ -15,7 +21,7 @@ import Shopee.main.Service.iUserService;
 import Shopee.main.entity.user;
 import Shopee.main.repository.userRepository;
 
-@Service
+@Service("userDetailsService")
 public class UserServiceImpl implements iUserService{
 	@Autowired
 	userRepository userRepository;
@@ -24,7 +30,20 @@ public class UserServiceImpl implements iUserService{
 	public user checkLogin(String username) {
 		return userRepository.checkLogin(username);
 	}
-
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		List<user> users=userRepository.findByuName(username);
+		if(users.isEmpty())
+		{
+			throw new UsernameNotFoundException("user does not exist!!!");
+		}
+		
+		user user=users.get(0);
+		Set<GrantedAuthority> auth=new HashSet<>();
+		auth.add(new SimpleGrantedAuthority(user.getUserRole()));
+		
+		return new org.springframework.security.core.userdetails.User(user.getUName(),user.getUPassword(),auth);
+	}
 	@Override
 	public <S extends user> S save(S entity) {
 		return userRepository.save(entity);
@@ -136,6 +155,11 @@ public class UserServiceImpl implements iUserService{
 	public Page<user> findByuNameContaining(String name, Pageable pageable) {
 		// TODO Auto-generated method stub
 		return userRepository.findByuNameContaining(name, pageable);
+	}
+	@Override
+	public List<user> findByuName(String username) {
+		// TODO Auto-generated method stub
+		return userRepository.findByuName(username);
 	}
 
 	

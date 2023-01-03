@@ -56,7 +56,7 @@ public class LoginGoogleServlet  {
 					userEntity.setUName(username);
 					userEntity.setUEmail(email);
 					userEntity.setUImage(image);
-					userEntity.setIdRole(1);
+					userEntity.setUserRole("Role_user");
 					userEntity.setIsAccountGoogle(1);
 					userService.save(userEntity);
 

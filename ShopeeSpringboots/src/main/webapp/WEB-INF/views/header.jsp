@@ -15,7 +15,7 @@ window.onpageshow = function(evt) {
                         <nav class="navbar flexible-box hide-on-mb-tb">
                             <ul class="navbar__list flexible-box">
                   			<c:if test="${sessionScope.acc!=null}">
-                            <c:if test="${sessionScope.acc.idRole==3}">
+                            <c:if test="${sessionScope.acc.userRole=='Role_seller'}">
                                 <li class="navbar__item">
                                     <a href="/managerProduct?size=10&page=1" class="navbar__item-link">
                                         Kênh Người Bán
@@ -24,7 +24,7 @@ window.onpageshow = function(evt) {
                                
                                 </c:if>
                                 
-                                <c:if test="${sessionScope.acc.idRole!=3}">
+                                <c:if test="${sessionScope.acc.userRole!='Role_seller'}">
                                 <li class="navbar__item">
                                     <a href="/registerManager" class="navbar__item-link">
                                         Kênh Người Bán
@@ -73,21 +73,21 @@ window.onpageshow = function(evt) {
                                 </li>
                             </ul>
                             <ul class="navbar__list flexible-box">
-                                <c:if test="${sessionScope.acc.idRole==3}">
+                               <%--  <c:if test="${sessionScope.acc.idRole==3}">
                                 <li class="navbar__item">
                                     <a href="/managerProduct?size=10&page=1" class="navbar__item-link medium-text">
                                         managerProduct
                                     </a>
                                 </li> 
-                            </c:if>
+                            </c:if> --%>
                             
-                            <c:if test="${sessionScope.acc.idRole==4}">
+                           <%--  <c:if test="${sessionScope.acc.idRole==4}">
                                 <li class="navbar__item">
                                     <a href="/orderShipper" class="navbar__item-link medium-text">
                                         Shipper
                                     </a>
                                 </li> 
-                            </c:if>
+                            </c:if> --%>
                             <c:if test="${sessionScope.acc==null}">
                                 <li class="navbar__item">
                             <a href="/signup" class="navbar__item-link medium-text">

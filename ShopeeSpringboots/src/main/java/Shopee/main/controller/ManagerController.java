@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -39,6 +40,7 @@ import Shopee.main.entity.shop;
 import Shopee.main.entity.user;
 
 @Controller
+
 public class ManagerController {
 	@Autowired
 	iProductService productService;
@@ -136,7 +138,7 @@ public class ManagerController {
 		return "managerShop/statiscManager";
 	}
 	
-	@GetMapping("/orderManager")
+	@GetMapping("/managerProduct/orderManager")
 	public String orderManager(Model model,@ModelAttribute(name="shopId")String shopId)
 	{
 		

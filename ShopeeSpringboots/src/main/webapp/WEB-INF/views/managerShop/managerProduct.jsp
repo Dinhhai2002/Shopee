@@ -100,7 +100,7 @@ body {
 								<div class="row">
 									<div class="col-sm-6">
 										<a href="#" class="table-title-header"> Quản lý sản phẩm </a>
-										<a href="/orderManager" class="table-title-header"
+										<a href="/managerProduct/orderManager" class="table-title-header"
 											data-toggle="modal"> <span>Đơn hàng</span></a> <a
 											href="" onclick="editShopModal(${shop.shopId})"
 											id="btn_model"class="table-title-header" data-toggle="modal"> <span>Chỉnh

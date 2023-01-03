@@ -65,14 +65,10 @@ public class loginController {
 					cookie.create("username",acc.getUName(), 3);
 					cookie.delete("password");
 				}
-				if(acc.getIdRole()==4)
-				{
-					return "redirect:/orderShipper";
-				}
-				if(acc.getIdRole()==2)
-				{
-					return "redirect:/admin";
-				}
+				
+				 if(acc.getUserRole()=="Role_shipper") { return "redirect:/orderShipper"; }
+				 if(acc.getUserRole()=="Role_admin") { return "redirect:/admin"; }
+				 
 				
 				return "redirect:/home";
 			} else {
@@ -191,7 +187,7 @@ public class loginController {
 		entity.setUFullAddress(fullAddress);
 		entity.setUPassword(password);
 		entity.setUPhone(phoneNumber);
-		entity.setIdRole(1);
+		entity.setUserRole("Role_user");
 		entity.setIsAccountGoogle(0);
 		entity.setCreateAt(cal.getTime());
 		userService.insertAccount(username, fullname, email, address, fullAddress, password, phoneNumber);

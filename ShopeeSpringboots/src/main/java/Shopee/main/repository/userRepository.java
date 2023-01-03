@@ -43,7 +43,8 @@ public interface userRepository extends JpaRepository<user, Integer >  {
 	@Query(value="select * from [user] where [uName]=? and [uFullName]=? and uEmail=? and uAddress=? and uPhone=?",nativeQuery = true)
 	 public user CheckAccountUpdate(String user,String fullname,String email,String Address,String phoneNumber);
 	
-	
+	@Query(value="select * from [user] where uName=?1",nativeQuery = true)
+	List<user> findByuName(String username);
 	@Query(value="select top 10 * from [user]",nativeQuery = true)
 	public List<user> getTop10();
 }

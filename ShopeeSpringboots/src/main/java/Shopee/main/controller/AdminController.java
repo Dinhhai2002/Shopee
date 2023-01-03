@@ -1,6 +1,7 @@
 package Shopee.main.controller;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -61,22 +62,33 @@ public class AdminController {
 
 	@GetMapping("")
 	public String Admin(Model model) {
-		long countUser = userService.count();
-		long countShop = shopService.count();
-		long countProduct = productService.count();
-		long countRevenue = statsService.countRevenue();
+		try {
+			long countUser = userService.count();
+			long countShop = shopService.count();
+			long countProduct = productService.count();
+			
+			 long countRevenue = statsService.countRevenue();
 
-		model.addAttribute("totalUser", countUser);
-		model.addAttribute("totalShop", countShop);
-		model.addAttribute("totalProduct", countProduct);
+			model.addAttribute("totalUser", countUser);
+			model.addAttribute("totalShop", countShop);
+			model.addAttribute("totalProduct", countProduct);
+			
+			
+				model.addAttribute("countRevenue", countRevenue);
+			
+			
 
-		model.addAttribute("countRevenue", countRevenue);
-
-		List<orderDetail> list = orderDetailService.findTop10();
-		List<user> listUser = userService.getTop10();
-		model.addAttribute("listSelectOrderDetail", list);
-		model.addAttribute("listUser", listUser);
-		return "/admin/Admin";
+			List<orderDetail> list = orderDetailService.findTop10();
+			List<user> listUser = userService.getTop10();
+			model.addAttribute("listSelectOrderDetail", list);
+			model.addAttribute("listUser", listUser);
+			return "/admin/Admin";
+		}catch (Exception e) {
+			e.printStackTrace();
+			return "/admin/Admin";
+		}
+		
+		
 	}
 
 	@GetMapping("/user")
