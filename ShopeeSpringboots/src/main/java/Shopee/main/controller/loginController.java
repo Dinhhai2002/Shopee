@@ -193,6 +193,7 @@ public class loginController {
 		userService.insertAccount(username, fullname, email, address, fullAddress, password, phoneNumber);
 		userService.save(entity);
 		redirectAttributes.addFlashAttribute("mess", "Đăng kí thành công");
+		httpSession.removeAttribute("password");
 		return"redirect:/login";
 	}
 	else {
