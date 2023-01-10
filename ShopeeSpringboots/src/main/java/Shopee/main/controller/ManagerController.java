@@ -159,6 +159,6 @@ public class ManagerController {
 	@GetMapping("/registerManager")
 	public String registerManager(Model model)
 	{
-		return "registerManagerProduct";
+		return "managerShop/registerManagerProduct";
 	}
 }
