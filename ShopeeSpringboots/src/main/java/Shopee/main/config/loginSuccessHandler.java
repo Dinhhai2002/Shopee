@@ -57,11 +57,17 @@ public class loginSuccessHandler extends SavedRequestAwareAuthenticationSuccessH
 			 // System.out.println("vao day");
 		  
 		  }
-		  else if(!acc.getUserRole().equals("Role_admin"))
+		  else if(acc.getUserRole().equals("Role_shipper"))
+		  {
+			 
+			  redirectUrl +="/shipper/orderShipper";
+		  }
+		  else 
 		  {
 			 
 			  redirectUrl +="/home";
 		  }
+		 
 		 response.sendRedirect(redirectUrl);
 		 
 		super.onAuthenticationSuccess(request, response, authentication);
