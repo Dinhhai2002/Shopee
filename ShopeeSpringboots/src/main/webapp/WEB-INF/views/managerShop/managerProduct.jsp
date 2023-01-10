@@ -104,9 +104,9 @@ body {
 											data-toggle="modal"> <span>Đơn hàng</span></a> <a
 											href="" onclick="editShopModal(${shop.shopId})"
 											id="btn_model"class="table-title-header" data-toggle="modal"> <span>Chỉnh
-												sửa thông tin shop</span></a>
+												sửa thông tin shop</span><!-- </a>
 												<a href="/managerProduct/stats" class="table-title-header"
-											data-toggle="modal"> <span>Thống kê</span></a>
+											data-toggle="modal"> <span>Thống kê</span></a> -->
 									</div>
 									<div class="col-sm-6 btn-add">
 										<a href="#addProductModal" class="btn btn-info"
