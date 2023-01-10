@@ -1,5 +1,5 @@
 # Website Shopee
-##link demo:https://www.youtube.com/watch?v=tzLPZFXGtds&t=368s
+## link demo:https://www.youtube.com/watch?v=tzLPZFXGtds&t=368s
 ## Công nghệ sử dụng:
  * FrontEnd:Html,Css,Javascript(JSP)
  * BackEnd:Java(Spring boots)
